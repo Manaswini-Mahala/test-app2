@@ -23,30 +23,54 @@ class Auth extends Component {
     }
 
     login() {
-        //console.warn("state", this.state)
-        let toSend={};
-        toSend.email=document.getElementById("email").value;
-        toSend.password=document.getElementById("password").value;
-        fetch('http://localhost:8080/api1/login', {
-            method: "POST",
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(this.toSend)
-        }).then((result) => result.text())
+    //    //console.warn("state", this.state)
+    //    let toSend={};
+    //    toSend.email=document.getElementById("email").value;
+    //    toSend.password=document.getElementById("password").value;
+    //    fetch('http://localhost:8080/api1/login', {
+    //        method: "POST",
+    //        headers: {
+    //            "Accept": "application/json",
+    //            "Content-Type": "application/json",
+    //        },
+    //        body: JSON.stringify(this.toSend)
+    //    }).then((result) => result.text())
 
         // .then(data=>console.log(data)
 
+
+          //let toSend={};
+   const e=document.getElementById("email").value;
+   const p=document.getElementById("password").value;
+
+            const requestOptions = {
+      method: 'POST',
+      headers: { 'Accept': 'application/json',
+                   'Content-Type': 'application/json' },
+       // body: JSON.stringify({params: { "email": nemail, "password": npassword }})
+        //body: JSON.stringify(this.toSend)
+        body: JSON.stringify({ email: e, password: p })
+        //body: JSON.stringify({ email: 'parnikakulkarni@gmail.com', password: 'Parnika' })
+    };
+    
+    fetch('http://localhost:8080/api1/login',requestOptions)
+        .then(response => response.text())
+        //.then(data => this.setState({ postId: data.id }));
+
+
+
+
+        //.then(data=>console.log(data));
         .then(data=>{
-            if(data=="valid login attempt"){
-                this.props.history.push('/home')
+            if(data=="Valid login attempt"){
+               this.props.history.push('/home')
         }
         else{
-            throw new Error("data invalid");
+           //throw new Error("Invalid login attempt");
+           document.getElementById("error").innerHTML = data;
 
         }
-    })
+    });
 
         // if(data=="valid login attemp"){
         //     this.props.history.push('/home')
@@ -96,7 +120,7 @@ class Auth extends Component {
                     !this.state.isRegister ?
                         <div>
                             <label>Email</label><br />
-                            <input type="text" id='name'
+                            <input type="text" id='email'
                                 onChange={(e) => { this.setState({ email: e.target.value }) }} /><br /><br />
                             <label>Password</label><br />
                             <input type="text" id='password'
@@ -105,7 +129,7 @@ class Auth extends Component {
 
                             <button onClick={() => this.login()}>Login</button>
                             <div style={{color:'red'}}>{this.state.errorMsg}</div>
-
+                            <div style={{color:'red'}}><p id="error"></p></div>
                             <br />
                             <br />
 
