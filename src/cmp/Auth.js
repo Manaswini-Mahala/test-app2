@@ -75,7 +75,7 @@ class Auth extends Component {
                 'Content-Type': 'application/json'
             },
 
-            body: JSON.stringify({ name: n, email: e, password: p, cpassword: cp, accountno: a, ifsc: i, cbalance: ab, month: m, year: y  })
+            body: JSON.stringify({ name: n, email: e, password: p, cpassword: cp, accountno: a, ifsccode: i, cbalance: ab, month: m, year: y  })
 
         };
 
@@ -86,7 +86,7 @@ class Auth extends Component {
                     this.props.history.push('/home')
                 }
                 else {
-                    document.getElementById("error").innerHTML = data;
+                    document.getElementById("error2").innerHTML = data;
 
                 }
             });
@@ -111,7 +111,7 @@ class Auth extends Component {
                     !this.state.isRegister ?
                         <div>
                             <label>Email</label><br />
-                            <input type="text" id='name'
+                            <input type="text" id='email'
                                 onChange={(e) => { this.setState({ email: e.target.value }) }} /><br /><br />
                             <label>Password</label><br />
                             <input type="text" id='password'
@@ -120,7 +120,7 @@ class Auth extends Component {
 
                             <button onClick={() => this.login()}>Login</button>
                             {/* <div style={{ color: 'red' }}>{this.state.errorMsg}</div> */}
-
+                            <div style={{color:'red'}}><p id="error"></p></div>
                             <br />
                             <br />
 
@@ -180,7 +180,9 @@ class Auth extends Component {
 
 
                             <button onClick={() => this.register()}>Register</button> <br /><br />
-
+                            <div style={{color:'red'}}><p id="error2"></p></div>
+                            <br />
+                            <br />
 
                             <label>Already registered? Login here!</label> <br />
 
