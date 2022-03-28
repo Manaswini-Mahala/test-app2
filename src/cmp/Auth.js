@@ -134,44 +134,44 @@ class Auth extends Component {
                         <div>
 
                             <label>Name</label><br />
-                            <input type="text" placeholder='John Doe'
+                            <input type="text" placeholder='John Doe' id='name'
                                 onChange={(e) => { this.setState({ name: e.target.value }) }} /><br /><br />
 
 
                             <label>Email</label><br />
-                            <input type="text" placeholder='johndoe@test.com'
+                            <input type="text" placeholder='johndoe@test.com' id='email'
                                 onChange={(e) => { this.setState({ email: e.target.value }) }} /><br /><br />
 
 
                             <label>Password</label><br />
-                            <input type="text"
+                            <input type="text" id='password'
                                 onChange={(e) => { this.setState({ password: e.target.value }) }} /><br /><br />
 
 
                             <label>Confirm Password</label><br />
-                            <input type="text"
+                            <input type="text" id='cpassword'
                                 onChange={(e) => { this.setState({ cpassword: e.target.value }) }} /><br /><br />
 
                             <label>Add Account Details</label><br/><br/>
 
                             <label>Account Number</label><br />
-                            <input type="text"
+                            <input type="text" id='accountno'
                                 onChange={(e) => { this.setState({ accountno: e.target.value }) }} /><br /><br />
 
                             <label>IFSC Code</label><br />
-                            <input type="text"
+                            <input type="text" id='ifsc'
                                 onChange={(e) => { this.setState({ ifsc: e.target.value }) }} /><br /><br />
 
                             <label>Account Balance</label><br />
-                            <input type="text"
+                            <input type="text" id='cbalance'
                                 onChange={(e) => { this.setState({ cbalance: e.target.value }) }} /><br /><br />
 
                             <label>Month</label><br />
-                            <input type="text"
+                            <input type="text" id='month'
                                 onChange={(e) => { this.setState({ month: e.target.value }) }} /><br /><br />
 
                             <label>Year</label><br />
-                            <input type="text"
+                            <input type="text" id='year'
                                 onChange={(e) => { this.setState({ year: e.target.value }) }} /><br /><br />
 
 
