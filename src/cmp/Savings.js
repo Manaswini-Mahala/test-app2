@@ -10,7 +10,7 @@ class Savings extends Component {
 
                 <label>Month</label><br />
                 <input type="text" id='month'
-                    onChange={(e) => { this.setState({ month: e.target.value }) }} /><br /><br />
+                    onChange={(e) => { this.setState({ month: e.target.value }) }} /><br /><br /><br/>
 
             </div>
         );
