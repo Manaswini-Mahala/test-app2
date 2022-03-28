@@ -69,7 +69,7 @@ class Auth extends Component {
         const y = document.getElementById("year").value;
 
         const requestOptions = {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
