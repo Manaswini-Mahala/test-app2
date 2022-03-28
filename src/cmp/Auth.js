@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
     Redirect,
     Link,
@@ -17,89 +17,80 @@ class Auth extends Component {
         super()
         this.state = {
             isRegister: false,
-            errorMsg:''
-            
+            errorMsg: ''
+
         }
     }
 
     login() {
-    //    //console.warn("state", this.state)
-    //    let toSend={};
-    //    toSend.email=document.getElementById("email").value;
-    //    toSend.password=document.getElementById("password").value;
-    //    fetch('http://localhost:8080/api1/login', {
-    //        method: "POST",
-    //        headers: {
-    //            "Accept": "application/json",
-    //            "Content-Type": "application/json",
-    //        },
-    //        body: JSON.stringify(this.toSend)
-    //    }).then((result) => result.text())
 
-        // .then(data=>console.log(data)
+        const e = document.getElementById("email").value;
+        const p = document.getElementById("password").value;
 
+        const requestOptions = {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
 
-          //let toSend={};
-   const e=document.getElementById("email").value;
-   const p=document.getElementById("password").value;
+            body: JSON.stringify({ email: e, password: p })
 
-            const requestOptions = {
-      method: 'POST',
-      headers: { 'Accept': 'application/json',
-                   'Content-Type': 'application/json' },
-       // body: JSON.stringify({params: { "email": nemail, "password": npassword }})
-        //body: JSON.stringify(this.toSend)
-        body: JSON.stringify({ email: e, password: p })
-        //body: JSON.stringify({ email: 'parnikakulkarni@gmail.com', password: 'Parnika' })
-    };
-    
-    fetch('http://localhost:8080/api1/login',requestOptions)
-        .then(response => response.text())
-        //.then(data => this.setState({ postId: data.id }));
+        };
 
+        fetch('http://localhost:8080/api1/login', requestOptions)
+            .then(response => response.text())
+            //.then(data => this.setState({ postId: data.id }));
+            //.then(data=>console.log(data));
+            .then(data => {
+                if (data == "Valid login attempt") {
+                    this.props.history.push('/home')
+                }
+                else {
+                    //throw new Error("Invalid login attempt");
+                    document.getElementById("error").innerHTML = data;
 
+                }
+            });
 
-
-        //.then(data=>console.log(data));
-        .then(data=>{
-            if(data=="Valid login attempt"){
-               this.props.history.push('/home')
-        }
-        else{
-           //throw new Error("Invalid login attempt");
-           document.getElementById("error").innerHTML = data;
-
-        }
-    });
-
-        // if(data=="valid login attemp"){
-        //     this.props.history.push('/home')
-        // }
-        
-        // .catch((err)=>{
-        //     this.setState({
-        //         errorMsg:'Invalid Credentials'
-        //     })
-        // })
         //         //alert("login called")
     }
 
     register() {
-        console.warn("state", this.state)
-        fetch('http://localhost:8080/api1/registration', {
-            method: "PUT",
+        // console.warn("state", this.state)
+        const n = document.getElementById("name").value;
+        const e = document.getElementById("email").value;
+        const p = document.getElementById("password").value;
+        const cp = document.getElementById("cpassword").value;
+        const a = document.getElementById("accountno").value;
+        const i = document.getElementById("ifsc").value;
+        const ab = document.getElementById("cbalance").value;
+        const m = document.getElementById("month").value;
+        const y = document.getElementById("year").value;
+
+        const requestOptions = {
+            method: 'POST',
             headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json",
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify(this.state)
-        }).then((result) => {
-            result.json().then((resp) => {
-                console.log(resp);
 
-            })
+            body: JSON.stringify({ name: n, email: e, password: p, cpassword: cp, accountno: a, ifsc: i, cbalance: ab, month: m, year: y  })
 
-        })
+        };
+
+        fetch('http://localhost:8080/api1/registration', requestOptions)
+            .then(response => response.text())
+            .then(data => {
+                if (data == "New user registered successfully") {
+                    this.props.history.push('/home')
+                }
+                else {
+                    document.getElementById("error").innerHTML = data;
+
+                }
+            });
+
         //         //alert("registered")
     }
 
@@ -120,7 +111,7 @@ class Auth extends Component {
                     !this.state.isRegister ?
                         <div>
                             <label>Email</label><br />
-                            <input type="text" id='email'
+                            <input type="text" id='name'
                                 onChange={(e) => { this.setState({ email: e.target.value }) }} /><br /><br />
                             <label>Password</label><br />
                             <input type="text" id='password'
@@ -128,8 +119,8 @@ class Auth extends Component {
 
 
                             <button onClick={() => this.login()}>Login</button>
-                            <div style={{color:'red'}}>{this.state.errorMsg}</div>
-                            <div style={{color:'red'}}><p id="error"></p></div>
+                            {/* <div style={{ color: 'red' }}>{this.state.errorMsg}</div> */}
+
                             <br />
                             <br />
 
@@ -161,10 +152,34 @@ class Auth extends Component {
                             <input type="text"
                                 onChange={(e) => { this.setState({ cpassword: e.target.value }) }} /><br /><br />
 
-                                
+                            <label>Add Account Details</label><br/><br/>
+
+                            <label>Account Number</label><br />
+                            <input type="text"
+                                onChange={(e) => { this.setState({ accountno: e.target.value }) }} /><br /><br />
+
+                            <label>IFSC Code</label><br />
+                            <input type="text"
+                                onChange={(e) => { this.setState({ ifsc: e.target.value }) }} /><br /><br />
+
+                            <label>Account Balance</label><br />
+                            <input type="text"
+                                onChange={(e) => { this.setState({ cbalance: e.target.value }) }} /><br /><br />
+
+                            <label>Month</label><br />
+                            <input type="text"
+                                onChange={(e) => { this.setState({ month: e.target.value }) }} /><br /><br />
+
+                            <label>Year</label><br />
+                            <input type="text"
+                                onChange={(e) => { this.setState({ year: e.target.value }) }} /><br /><br />
 
 
-                            <Link to='/home'><button onClick={() => this.register()}>Register</button></Link> <br /><br />
+
+
+
+
+                            <button onClick={() => this.register()}>Register</button> <br /><br />
 
 
                             <label>Already registered? Login here!</label> <br />
