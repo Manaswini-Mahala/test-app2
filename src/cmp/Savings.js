@@ -50,11 +50,11 @@ class Savings extends Component {
             <div className='app'>
                 <label>Salary</label><br />
                 <input type="text" id='salary'
-                    onChange={(e) => { this.setState({ cbalance: e.target.value }) }} /><br /><br />
+                    onChange={(e) => { this.setState({ salary: e.target.value }) }} /><br /><br />
 
                 <label>Expenditure</label><br />
                 <input type="text" id='expenditure'
-                    onChange={(e) => { this.setState({ month: e.target.value }) }} /><br /><br /><br />
+                    onChange={(e) => { this.setState({ expenditure: e.target.value }) }} /><br /><br /><br />
 
                 <button onClick={() => this.savings()}>Check Savings</button><br/>
                 <div><p id="output"></p></div>
