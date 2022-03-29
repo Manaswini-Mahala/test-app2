@@ -84,7 +84,7 @@ class Expenses extends Component {
                 <input type="text" id='travel'
                     onChange={(e) => { this.setState({ travel: e.target.value }) }} /><br /><br />
 
-                <label>Prsonal Upkeep</label><br />
+                <label>Personal Upkeep</label><br />
                 <input type="text" id='personal'
                     onChange={(e) => { this.setState({ personal: e.target.value }) }} /><br /><br />
 
