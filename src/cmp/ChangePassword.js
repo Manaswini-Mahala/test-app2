@@ -32,10 +32,6 @@ class ChangePassword extends Component {
         return (
             <div className='a2'>
 
-                <label>Email</label><br />
-                <input type="text"
-                    onChange={(e) => { this.setState({ email: e.target.value }) }} /><br /><br />
-
                 <label>New Password</label><br />
                 <input type="text"
                     onChange={(e) => { this.setState({ npassword: e.target.value }) }} /><br /><br />

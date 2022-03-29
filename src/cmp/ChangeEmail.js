@@ -40,10 +40,6 @@ class ChangeEmail extends Component {
                 <input type="text"
                     onChange={(e) => { this.setState({ nemail: e.target.value }) }} /><br /><br />
 
-                <label>Password</label><br />
-                <input type="text"
-                    onChange={(e) => { this.setState({ password: e.target.value }) }} /><br /><br />
-
 
                 <Link to='/EmailChanged'><button onClick={() => this.email()}>Change Email</button></Link>
 

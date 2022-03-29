@@ -42,14 +42,6 @@ class ChangeName extends Component {
                 <input type="text"
                     onChange={(e) => { this.setState({ nname: e.target.value }) }} /><br /><br />
 
-                <label>Password</label><br />
-                <input type="text"
-                    onChange={(e) => { this.setState({ password: e.target.value }) }} /><br /><br />
-
-                <label>Email</label><br />
-                <input type="text"
-                    onChange={(e) => { this.setState({ email: e.target.value }) }} /><br /><br />
-
                 <Link to='/NameChanged'><button onClick={() => this.name()}>Change Name</button></Link>
 
 
