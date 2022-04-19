@@ -14,8 +14,6 @@ import Account from './cmp/Account';
 import ChangeAccountDetails from './cmp/ChangeAccountDetails';
 import DeactivateAccount from './cmp/DeactivateAccount';
 import DeleteAccount from './cmp/DeleteAccount';
-import AccountDeactivated from './cmp/AccountDeactivated';
-import AccountDeleted from './cmp/AccountDeleted';
 import ChangeName from './cmp/ChangeName';
 import ChangePassword from './cmp/ChangePassword';
 import ChangeEmail from './cmp/ChangeEmail';
@@ -58,8 +56,6 @@ function App() {
             <Route exact path="/changeaccountdetails"><ChangeAccountDetails /> </Route>
             <Route exact path="/deactivateaccount"><DeactivateAccount /> </Route>
             <Route exact path="/deleteaccount"><DeleteAccount /> </Route>
-            <Route exact path="/accountdeactivated"><AccountDeactivated /> </Route>
-            <Route exact path="/accountdeleted"><AccountDeleted /> </Route>
             <Route exact path="/changename"><ChangeName/> </Route>
             <Route exact path="/changepassword"><ChangePassword /> </Route>
             <Route exact path="/changeemail"><ChangeEmail /> </Route>
