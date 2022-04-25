@@ -17,6 +17,8 @@ import DeleteAccount from './cmp/DeleteAccount';
 import ChangeName from './cmp/ChangeName';
 import ChangePassword from './cmp/ChangePassword';
 import ChangeEmail from './cmp/ChangeEmail';
+import MutualFunds from './cmp/MutualFunds';
+import ProvidentFunds from './cmp/ProvidentFunds';
 import Error from './Error';
 
 import {
@@ -59,6 +61,8 @@ function App() {
             <Route exact path="/changename"><ChangeName/> </Route>
             <Route exact path="/changepassword"><ChangePassword /> </Route>
             <Route exact path="/changeemail"><ChangeEmail /> </Route>
+            <Route exact path="/mutualfunds"><MutualFunds /> </Route>
+            <Route exact path="/providentfunds"><ProvidentFunds /> </Route>
             
 
 
