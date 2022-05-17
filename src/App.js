@@ -20,6 +20,9 @@ import ChangeEmail from './cmp/ChangeEmail';
 import MutualFunds from './cmp/MutualFunds';
 import ProvidentFunds from './cmp/ProvidentFunds';
 import Resources from './cmp/Resources';
+import Stocks from './cmp/Stocks';
+import Logs from './cmp/Logs';
+
 import Error from './Error';
 
 import {
@@ -65,6 +68,8 @@ function App() {
             <Route exact path="/mutualfunds"><MutualFunds /> </Route>
             <Route exact path="/providentfunds"><ProvidentFunds /> </Route>
             <Route exact path="/resources"><Resources /> </Route>
+            <Route exact path="/stocks"><Stocks /> </Route>
+            <Route exact path="/logs"><Logs /> </Route>
             
 
 

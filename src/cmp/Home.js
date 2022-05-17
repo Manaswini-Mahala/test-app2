@@ -29,16 +29,14 @@ function Home() {
     return (
         <div className="app">
 
-         {/* <Router> */}
-
-
 
             <Link to='/Savings'><Box heading='Savings' /> </Link>
             <Link to='/Expenses'><Box heading='Expenses' /></Link>
             <Link to='/Investments'><Box heading='Investments' /></Link>
+            <Link to='/Logs'><Box heading='Logs' /></Link>
             <Link to='/Account'><Box heading='Accounts' /></Link>
 
-            {/* </Router> */}
+            
 
 
         </div>
