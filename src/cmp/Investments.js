@@ -14,7 +14,7 @@ function Investments() {
         <div className='app'>
             <Link to='/MutualFunds'><RectBox accountSection='Mutual Funds' /> </Link>
             <Link to='/ProvidentFunds'><RectBox accountSection='Provident Funds' /></Link>
-            {/* <Link to='/RealEstate'><RectBox accountSection='Real Estate' /></Link> */}
+            <Link to='/Resources'><RectBox accountSection='Resources' /></Link>
             {/* <Link to='/Account'><Box accountSection='Accounts' /></Link> */}
 
         </div>
