@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Cookies from 'js-cookie';
 import {
     Redirect,
     Link,
@@ -26,6 +27,9 @@ class Auth extends Component {
 
         const e = document.getElementById("email").value;
         const p = document.getElementById("password").value;
+        Cookies.set('email', e)
+        Cookies.set('password', p)
+
 
         const requestOptions = {
             method: 'POST',
@@ -45,6 +49,8 @@ class Auth extends Component {
             .then(data => {
                 if (data == "Valid login attempt") {
                     this.props.history.push('/home')
+                    // Cookies.set('email', e)
+                    // Cookies.set('password', p)
                 }
                 else {
                     //throw new Error("Invalid login attempt");
@@ -75,7 +81,7 @@ class Auth extends Component {
                 'Content-Type': 'application/json'
             },
 
-            body: JSON.stringify({ name: n, email: e, password: p, cpassword: cp, accountno: a, ifsccode: i, cbalance: ab, month: m, year: y  })
+            body: JSON.stringify({ name: n, email: e, password: p, cpassword: cp, accountno: a, ifsccode: i, cbalance: ab, month: m, year: y })
 
         };
 
@@ -120,7 +126,7 @@ class Auth extends Component {
 
                             <button onClick={() => this.login()}>Login</button>
                             {/* <div style={{ color: 'red' }}>{this.state.errorMsg}</div> */}
-                            <div style={{color:'red'}}><p id="error"></p></div>
+                            <div style={{ color: 'red' }}><p id="error"></p></div>
                             <br />
                             <br />
 
@@ -152,7 +158,7 @@ class Auth extends Component {
                             <input type="text" id='cpassword'
                                 onChange={(e) => { this.setState({ cpassword: e.target.value }) }} /><br /><br />
 
-                            <label>Add Account Details</label><br/><br/>
+                            <label>Add Account Details</label><br /><br />
 
                             <label>Account Number</label><br />
                             <input type="text" id='accountno'
@@ -180,7 +186,7 @@ class Auth extends Component {
 
 
                             <button onClick={() => this.register()}>Register</button> <br /><br />
-                            <div style={{color:'red'}}><p id="error2"></p></div>
+                            <div style={{ color: 'red' }}><p id="error2"></p></div>
                             <br />
                             <br />
 

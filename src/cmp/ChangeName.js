@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Cookies from 'js-cookie';
 
 import {
     BrowserRouter as Router,
@@ -13,6 +14,9 @@ class ChangeName extends Component {
     name() {
         const c = document.getElementById("cname").value;
         const n = document.getElementById("nname").value;
+        Cookies.get('email')
+        Cookies.get('password')
+        console.log(Cookies.get('email'))
 
         const requestOptions = {
             method: 'PUT',
