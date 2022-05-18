@@ -14,9 +14,10 @@ class ChangeName extends Component {
     name() {
         const c = document.getElementById("cname").value;
         const n = document.getElementById("nname").value;
-        Cookies.get('email')
         Cookies.get('password')
-        console.log(Cookies.get('email'))
+        Cookies.get('email')
+        
+        //console.log(Cookies.get('email'))
 
         const requestOptions = {
             method: 'PUT',
