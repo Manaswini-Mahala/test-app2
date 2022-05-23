@@ -27,8 +27,8 @@ class Auth extends Component {
 
         const e = document.getElementById("email").value;
         const p = document.getElementById("password").value;
-        Cookies.set('email', e)
-        Cookies.set('password', p)
+        Cookies.set("email", e)
+        Cookies.set("password", p)
 
 
         const requestOptions = {

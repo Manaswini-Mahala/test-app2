@@ -14,8 +14,11 @@ class ChangeName extends Component {
     name() {
         const c = document.getElementById("cname").value;
         const n = document.getElementById("nname").value;
-        Cookies.get('password')
-        Cookies.get('email')
+        const p = Cookies.get("password");
+        const e = Cookies.get("email");
+        
+        // Cookies.get('password')
+        // Cookies.get('email')
         
         //console.log(Cookies.get('email'))
 
@@ -26,7 +29,7 @@ class ChangeName extends Component {
                 'Content-Type': 'application/json'
             },
 
-            body: JSON.stringify({ cname: c, nname: n })
+            body: JSON.stringify({ email: e, password: p, cname: c, nname: n })
 
         };
 
