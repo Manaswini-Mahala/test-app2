@@ -10,6 +10,8 @@ class ProvidentFunds extends Component {
 
     provident() {
 
+        const e = Cookies.get("email");
+        const p = Cookies.get("password");
         const i = document.getElementById("iamount").value;
         const a = document.getElementById("aincome").value;
 
@@ -20,7 +22,7 @@ class ProvidentFunds extends Component {
                 'Content-Type': 'application/json'
             },
 
-            body: JSON.stringify({ iamount: i, aincome: a })
+            body: JSON.stringify({ email: e, password: p, iamount: i, aincome: a })
 
         };
 

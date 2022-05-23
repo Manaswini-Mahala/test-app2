@@ -10,6 +10,8 @@ class MutualFunds extends Component {
 
     mutual() {
 
+        const e = Cookies.get("email");
+        const p = Cookies.get("password");
         const i = document.getElementById("iamount").value;
         const m = document.getElementById("mincome").value;
 
@@ -20,7 +22,7 @@ class MutualFunds extends Component {
                 'Content-Type': 'application/json'
             },
 
-            body: JSON.stringify({ iamount: i, mincome: m })
+            body: JSON.stringify({ email: e, password: p, iamount: i, mincome: m })
 
         };
 

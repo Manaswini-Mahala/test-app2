@@ -9,6 +9,7 @@ import {
 
 class ChangePassword extends Component {
     password() {
+        const e = Cookies.get("email");
         const n = document.getElementById("npassword").value;
         const c = document.getElementById("cpassword").value;
 
@@ -19,7 +20,7 @@ class ChangePassword extends Component {
                 'Content-Type': 'application/json'
             },
 
-            body: JSON.stringify({ npassword: n, cpassowrd: c })
+            body: JSON.stringify({ email: e, npassword: n, cpassowrd: c })
 
         };
 

@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 class Expenses extends Component {
     expenses() {
 
+        const e = Cookies.get("email");
+        const p = Cookies.get("password");
         const s = document.getElementById("salary").value;
         const r = document.getElementById("rent").value;
         const t = document.getElementById("transport").value;
@@ -11,7 +13,7 @@ class Expenses extends Component {
         const c = document.getElementById("ce").value;
         const u = document.getElementById("utility").value;
         const tr = document.getElementById("travel").value;
-        const p = document.getElementById("personal").value;
+        const pe = document.getElementById("personal").value;
         const l = document.getElementById("loan").value;
         const cc = document.getElementById("cce").value;
         const o = document.getElementById("other").value;
@@ -24,7 +26,7 @@ class Expenses extends Component {
                 'Content-Type': 'application/json'
             },
 
-            body: JSON.stringify({ salary: s, rent: r, transport: t, insurance: i, food: f, c: c, utility: u, travel: tr, personal: p, loan: l, cce: cc, other: o })
+            body: JSON.stringify({ email: e, password: p, salary: s, rent: r, transport: t, insurance: i, food: f, c: c, utility: u, travel: tr, personal: pe, loan: l, cce: cc, other: o })
 
         };
 

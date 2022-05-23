@@ -11,6 +11,7 @@ class ChangeEmail extends Component {
     email() {
         const c = document.getElementById("cemail").value;
         const n = document.getElementById("nemail").value;
+        const p = Cookies.get("password");
 
         const requestOptions = {
             method: 'PUT',
@@ -19,7 +20,7 @@ class ChangeEmail extends Component {
                 'Content-Type': 'application/json'
             },
 
-            body: JSON.stringify({ cemail: c, nemail: n })
+            body: JSON.stringify({ passowrd: p, cemail: c, nemail: n })
 
         };
 

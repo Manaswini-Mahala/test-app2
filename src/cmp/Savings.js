@@ -10,8 +10,10 @@ class Savings extends Component {
 
     savings() {
 
+        const e = Cookies.get("email");
+        const p = Cookies.get("password");
         const s = document.getElementById("salary").value;
-        const e = document.getElementById("expenditure").value;
+        const ex = document.getElementById("expenditure").value;
 
         const requestOptions = {
             method: 'PUT',
@@ -20,7 +22,7 @@ class Savings extends Component {
                 'Content-Type': 'application/json'
             },
 
-            body: JSON.stringify({ salary: s, expenditure: e })
+            body: JSON.stringify({ email: e, password: p, salary: s, expenditure: ex })
 
         };
 
