@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Cookies from 'js-cookie';
 
 class Expenses extends Component {
     expenses() {
@@ -47,7 +48,7 @@ class Expenses extends Component {
 
             });
 
-        //         //alert("savings")
+        //         //alert("expenses")
     }
 
 
