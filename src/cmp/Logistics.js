@@ -6,11 +6,11 @@ import { PieChart, Pie, Tooltip } from 'recharts';
 //var expenses = 0;
 class Logistics extends Component {
 
-constructor(props){
-	super(props)
+    constructor(props) {
+        super(props)
 
-	this.state = {savings : 0, expenses : 0};
-}
+        this.state = { savings: 0, expenses: 0 };
+    }
 
     log() {
 
@@ -36,13 +36,13 @@ constructor(props){
             .then(data => {
                 document.getElementById("output").innerHTML = data.split('#').join('<br>');
 
-const savingString = data.split('#')[0];
-const expString = data.split('#')[1].split('Rs.')[2].substring(1);
+                const savingString = data.split('#')[0];
+                const expString = data.split('#')[1].split('Rs.')[2].substring(1);
 
-const savingSub = savingString.substring(savingString.indexOf('Rs.') + 3, savingString.indexOf('from') - 1);
-const expSub = expString.includes('Percentage') ? expString.substring(0, expString.indexOf('P') - 1) : expString.substring(0, expString.indexOf('Y') - 1);
+                const savingSub = savingString.substring(savingString.indexOf('Rs.') + 3, savingString.indexOf('from') - 1);
+                const expSub = expString.includes('Percentage') ? expString.substring(0, expString.indexOf('P') - 1) : expString.substring(0, expString.indexOf('Y') - 1);
 
-                this.setState({savings : parseInt(savingSub), expenses : parseInt(expSub)});
+                this.setState({ savings: parseInt(savingSub), expenses: parseInt(expSub) });
 
                 //piedata=[{name: 'savings', value: 100}, {name: 'expenses', value: 100}];
 
@@ -60,7 +60,7 @@ const expSub = expString.includes('Percentage') ? expString.substring(0, expStri
                 <div><p id="output"></p></div>
 
                 <PieChart width={300} height={300}>
-                    <Pie label dataKey='value' data={[{name: 'savings', value: this.state.savings}, {name: 'expenses', value: this.state.expenses}]} fill="#000"></Pie>
+                    <Pie label dataKey='value' data={[{ name: 'savings', value: this.state.savings }, { name: 'expenses', value: this.state.expenses }]} fill="#000"></Pie>
                     <Tooltip />
                 </PieChart>
 

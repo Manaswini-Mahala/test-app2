@@ -130,6 +130,10 @@ class Auth extends Component {
 
                             <button onClick={() => this.setState({ isRegister: true })}>Register</button>
 
+                            <label>Want to reactivate your account?</label> <br />
+
+                            <Link to='/ReactivateAccount'><button>Click Here</button></Link>
+
 
                         </div>
                         :
