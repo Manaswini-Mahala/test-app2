@@ -6,10 +6,6 @@ import {
     withRouter
 } from "react-router-dom";
 
-//export const Component = withRouter(({ history, location }) =>{
-
-//})
-
 class Auth extends Component {
 
 

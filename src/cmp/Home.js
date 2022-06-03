@@ -34,6 +34,7 @@ function Home() {
             <Link to='/Expenses'><Box heading='Expenses' /></Link>
             <Link to='/Investments'><Box heading='Investments' /></Link>
             <Link to='/Logs'><Box heading='Logs' /></Link>
+            <Link to='/Goals'><Box heading='Goals' /></Link>
             <Link to='/Account'><Box heading='Accounts' /></Link>
 
             

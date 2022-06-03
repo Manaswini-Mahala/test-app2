@@ -40,7 +40,7 @@ class DeleteAccount extends Component{
 
 
             });
-        //         //alert("deactivated")
+        //         //alert("deleted")
     }
 
 

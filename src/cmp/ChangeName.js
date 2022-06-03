@@ -17,8 +17,7 @@ class ChangeName extends Component {
         const p = Cookies.get("password");
         const e = Cookies.get("email");
         
-        // Cookies.get('password')
-        // Cookies.get('email')
+        
         
         //console.log(Cookies.get('email'))
 
@@ -60,6 +59,7 @@ class ChangeName extends Component {
                 <label>Current Name</label><br />
                 <input type="text" id="cname"
                     onChange={(e) => { this.setState({ cname: e.target.value }) }} /><br /><br />
+                    
 
                 <label>New Name</label><br />
                 <input type="text" id="nname"

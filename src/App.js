@@ -22,7 +22,11 @@ import ProvidentFunds from './cmp/ProvidentFunds';
 import Resources from './cmp/Resources';
 import Stocks from './cmp/Stocks';
 import Logs from './cmp/Logs';
-
+import Bonds from './cmp/Bonds';
+import RealEstate from './cmp/RealEstate';
+import Goals from './cmp/Goals';
+import Logistics from './cmp/Logistics';
+import Currency from './cmp/Currency';
 import Error from './Error';
 
 import {
@@ -32,10 +36,6 @@ import {
   Link,
 
 } from "react-router-dom";
-
-
-
-
 
 function App() {
   return (
@@ -70,23 +70,17 @@ function App() {
             <Route exact path="/resources"><Resources /> </Route>
             <Route exact path="/stocks"><Stocks /> </Route>
             <Route exact path="/logs"><Logs /> </Route>
+            <Route exact path="/bonds"><Bonds /> </Route>
+            <Route exact path="/realestate"><RealEstate /> </Route>
+            <Route exact path="/goals"><Goals /> </Route>
+            <Route exact path="/logistics"><Logistics /> </Route>
+            <Route exact path="/currency"><Currency /> </Route>
             
-
-
-
-
-            {/* <Route><Error />} > */}
-
-
+            
           </Switch>
-
         </Router>
-
       </div>
-
-
     </div>
   );
 }
-
 export default App;

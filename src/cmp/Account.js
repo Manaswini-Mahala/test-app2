@@ -15,7 +15,6 @@ function Account() {
             <Link to='/ChangeAccountDetails'><RectBox accountSection='Change Account Details' /> </Link>
             <Link to='/DeactivateAccount'><RectBox accountSection='Deactivate Account' /></Link>
             <Link to='/DeleteAccount'><RectBox accountSection='Delete Account' /></Link>
-            {/* <Link to='/Account'><Box accountSection='Accounts' /></Link> */}
 
         </div>
     );
