@@ -12,6 +12,17 @@ code {
     monospace;
 }
 
+pre {
+    display: block;
+    font-family: times new roman;
+    white-space: pre;
+    margin: 1em 0px;
+}
+
+
+
+
+
 .a1{
   
   padding: 10px;
@@ -25,5 +36,5 @@ code {
 .a2{
   padding: 15px;
   display: inline-block;
+  font-family: "Times New Roman", Times, serif;
 }
-
