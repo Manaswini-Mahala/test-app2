@@ -12,6 +12,7 @@ import {
 function Account() {
     return (
         <div className='app'>
+            <Link to='/ViewDetails'><RectBox accountSection='View Account Details' /> </Link>
             <Link to='/ChangeAccountDetails'><RectBox accountSection='Change Account Details' /> </Link>
             <Link to='/DeactivateAccount'><RectBox accountSection='Deactivate Account' /></Link>
             <Link to='/DeleteAccount'><RectBox accountSection='Delete Account' /></Link>

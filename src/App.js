@@ -28,6 +28,7 @@ import Goals from './cmp/Goals';
 import Logistics from './cmp/Logistics';
 import Currency from './cmp/Currency';
 import ReactivateAccount from './cmp/ReactivateAccount';
+import ViewDetails from './cmp/ViewDetails';
 import Error from './Error';
 
 import {
@@ -77,6 +78,7 @@ function App() {
             <Route exact path="/logistics"><Logistics /> </Route>
             <Route exact path="/currency"><Currency /> </Route>
             <Route exact path="/reactivateaccount"><ReactivateAccount /> </Route>
+            <Route exact path="/viewdetails"><ViewDetails /> </Route>
             
             
           </Switch>

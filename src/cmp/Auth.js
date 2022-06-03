@@ -129,6 +129,7 @@ class Auth extends Component {
                             <label>Not yet registered? Register Now!</label> <br />
 
                             <button onClick={() => this.setState({ isRegister: true })}>Register</button>
+                            <br /><br />
 
                             <label>Want to reactivate your account?</label> <br />
 
