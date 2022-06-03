@@ -11,7 +11,7 @@ class Currency extends Component {
         const c = document.getElementById("currency").value;
     
         const requestOptions = {
-            method: 'PUT',
+            method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -37,7 +37,7 @@ class Currency extends Component {
     render() {
         return (
             <div className='app'>
-                <label>Savings</label><br />
+                <label>Savings (in Rupees)</label><br />
                 <input type="text" id='savings'
                     onChange={(e) => { this.setState({ savings: e.target.value }) }} /><br /><br />
 

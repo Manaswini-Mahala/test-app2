@@ -41,6 +41,11 @@ class ChangeName extends Component {
                 if (data == "New name is the same as current name. No change made.") {  
                     document.getElementById("output").style.color = 'red';
                 }
+                else if(data == "No such user exists")
+                {
+                    document.getElementById("output").style.color = 'red';
+
+                }
                 else {
                     document.getElementById("output").style.color = 'green';
 

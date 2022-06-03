@@ -12,7 +12,7 @@ class Stocks extends Component {
         const s = document.getElementById("sn").value;
 
         const requestOptions = {
-            method: 'PUT',
+            method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'

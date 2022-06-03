@@ -12,7 +12,7 @@ class Bonds extends Component {
         const b = document.getElementById("bn").value;
 
         const requestOptions = {
-            method: 'PUT',
+            method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'

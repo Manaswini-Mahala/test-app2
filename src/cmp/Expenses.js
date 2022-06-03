@@ -31,13 +31,16 @@ class Expenses extends Component {
 
         };
 
-        fetch('http://localhost:8080/api1/expenditure', requestOptions)
+        fetch('http://localhost:8080/api1/expenditures', requestOptions)
             .then(response => response.text())
             //.then(data => this.setState({ postId: data.id }));
             //.then(data=>console.log(data));
             .then(data => {
                 document.getElementById("output").innerHTML = data;
-                if (data == "You are spending more that you are earning per year. Please make use of our application to monitor your expenses and improve your savings." || "You are spending all your earnings on expenses. Please make use of our application to monitor your expenses and improve your savings.") {
+                if (data == "You are spending more that you are earning per year. Please make use of our application to monitor your expenses and improve your savings.") {
+                    document.getElementById("output").style.color = 'red';
+                }
+                else if (data == "You are spending all your earnings on expenses. Please make use of our application to monitor your expenses and improve your savings.") {
                     document.getElementById("output").style.color = 'red';
                 }
                 else {

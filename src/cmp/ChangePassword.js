@@ -21,7 +21,7 @@ class ChangePassword extends Component {
                 'Content-Type': 'application/json'
             },
 
-            body: JSON.stringify({ email: e, npassword: n, cpassowrd: c })
+            body: JSON.stringify({ email: e, npassword: n, cpassword: c })
 
         };
 
@@ -31,11 +31,18 @@ class ChangePassword extends Component {
             //.then(data=>console.log(data));
             .then(data => {
                 document.getElementById("output").innerHTML = data;
-                if (data == "New password is the same as current password. No change made." || "New password cannot be similar to email. Please enter some other password for change.") {  
+                if (data == "New password is the same as current password. No change made.") {  
+                    document.getElementById("output").style.color = 'red';
+                }
+                else if (data == "New password cannot be similar to email. Please enter some other password for change.") {  
+                    document.getElementById("output").style.color = 'red';
+                }
+                else if (data == "No such user exists") {  
                     document.getElementById("output").style.color = 'red';
                 }
                 else {
                     document.getElementById("output").style.color = 'green';
+                    Cookies.set("password",n);
 
                 }
 

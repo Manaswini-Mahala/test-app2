@@ -10,15 +10,17 @@ class Goals extends Component {
         const s = document.getElementById("savings").value;
         const m = document.getElementById("mincome").value;
         const pr = document.getElementById("price").value;
+        const g = document.getElementById("goal").value;
+
 
         const requestOptions = {
-            method: 'PUT',
+            method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
 
-            body: JSON.stringify({ email: e, password: p, savings: s, mincome: m, price: pr })
+            body: JSON.stringify({ email: e, password: p, savings: s, mincome: m, price: pr, goal: g })
 
         };
 

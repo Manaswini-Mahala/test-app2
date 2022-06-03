@@ -17,7 +17,7 @@ class ProvidentFunds extends Component {
         const a = document.getElementById("aincome").value;
 
         const requestOptions = {
-            method: 'PUT',
+            method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -27,7 +27,7 @@ class ProvidentFunds extends Component {
 
         };
 
-        fetch('http://localhost:8080/api1/mutualfunds', requestOptions)
+        fetch('http://localhost:8080/api1/providentfunds', requestOptions)
             .then(response => response.text())
             //.then(data => this.setState({ postId: data.id }));
             //.then(data=>console.log(data));

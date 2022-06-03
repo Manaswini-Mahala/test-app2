@@ -21,7 +21,7 @@ class ChangeEmail extends Component {
                 'Content-Type': 'application/json'
             },
 
-            body: JSON.stringify({ passowrd: p, cemail: c, nemail: n })
+            body: JSON.stringify({ password: p, cemail: c, nemail: n })
 
         };
 
@@ -31,12 +31,18 @@ class ChangeEmail extends Component {
             //.then(data=>console.log(data));
             .then(data => {
                 document.getElementById("output").innerHTML = data;
-                if (data == "New email is the same as current email. No change made." || "This email has been taken, please choose some other email") {  
+                if (data == "New email is the same as current email. No change made.") {  
+                    document.getElementById("output").style.color = 'red';
+                }
+                else if (data == "This email has been taken, please choose some other email") {  
+                    document.getElementById("output").style.color = 'red';
+                }
+                else if (data == "No such user exists") {  
                     document.getElementById("output").style.color = 'red';
                 }
                 else {
                     document.getElementById("output").style.color = 'green';
-
+                    Cookies.set("email",n);
                 }
 
 
