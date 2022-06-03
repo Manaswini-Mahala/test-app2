@@ -12,7 +12,7 @@ class DeleteAccount extends Component{
         const p = document.getElementById("password").value;
 
         const requestOptions = {
-            method: 'PUT',
+            method: 'DELETE',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'

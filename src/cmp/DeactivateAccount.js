@@ -29,7 +29,15 @@ class DeactivateAccount extends Component {
             //.then(data=>console.log(data));
             .then(data => {
                 
-                if (data == "No such account exists. Account deactivation unsuccessful." || "This account exists in the system. Account deactivation unsuccessful." || "Account deactivation unsuccessful.") {  
+                if (data == "No such account exists. Account deactivation unsuccessful." ) {  
+                    document.getElementById("output").innerHTML = data;
+                    document.getElementById("output").style.color = 'red';
+                }
+                else if (data == "This account exists in the system. Account deactivation unsuccessful.") {  
+                    document.getElementById("output").innerHTML = data;
+                    document.getElementById("output").style.color = 'red';
+                }
+                else if (data == "Account deactivation unsuccessful.") {  
                     document.getElementById("output").innerHTML = data;
                     document.getElementById("output").style.color = 'red';
                 }

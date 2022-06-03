@@ -29,7 +29,11 @@ class ReactivateAccount extends Component {
             //.then(data=>console.log(data));
             .then(data => {
                 
-                if (data == "No such account exists. Account reactivation unsuccessful." || data == "Account reactivation unsuccessful.") {  
+                if (data == "No such account existed. Account reactivation unsuccessful."){
+                    document.getElementById("output").innerHTML = data;
+                    document.getElementById("output").style.color = 'red';
+                }
+               else if(data == "Account reactivation unsuccessful.") {  
                     document.getElementById("output").innerHTML = data;
                     document.getElementById("output").style.color = 'red';
                 }
